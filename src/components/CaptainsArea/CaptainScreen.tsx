@@ -7,6 +7,7 @@ import useConnectCaptainToSocketRoom from "@/Hooks/useConnectCaptainToSocketRoom
 import useMediaQuery from "@custom-react-hooks/use-media-query";
 import { useTranslation } from "react-i18next";
 import LangToggler from "../SharedArea/LangToggler";
+import ThemeToggler from "../SharedArea/ThemeToggler";
 
 function CaptainScreen(): JSX.Element {
   const { session, setSession } = useGameContext();
@@ -26,17 +27,23 @@ function CaptainScreen(): JSX.Element {
       </div>
     );
   return (
-    <CardsContainer
-      randomWords={
-        (session.cards[0] as WikiObj)?.pageid
-          ? null
-          : (session.cards as RandomWord[])
-      }
-      isCaptain
-      cardsType={
-        (session.cards[0] as WikiObj)?.pageid ? "WikiObj" : "RandomWord"
-      }
-    />
+    <div className="grid grid-cols-[5%,95%] gap-2">
+      <div className="relative">
+        <LangToggler className="absolute top-[-4vh] left-0" />
+        <ThemeToggler className="absolute top-[10vh] left-0" />
+      </div>
+      <CardsContainer
+        randomWords={
+          (session.cards[0] as WikiObj)?.pageid
+            ? null
+            : (session.cards as RandomWord[])
+        }
+        isCaptain
+        cardsType={
+          (session.cards[0] as WikiObj)?.pageid ? "WikiObj" : "RandomWord"
+        }
+      />
+    </div>
   );
 }
 
