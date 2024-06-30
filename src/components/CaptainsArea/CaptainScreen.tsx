@@ -21,6 +21,8 @@ function CaptainScreen(): JSX.Element {
     return (
       <div className="flex flex-col overflow-hidden justify-center items-center gap-3 w-full h-full">
         <LangToggler className="w-1/4" />
+        <LangToggler className="w-1/4" />
+
         <div className="text-2xl font-semibold whitespace-pre-line">
           {t("captain.landscape")}
         </div>
