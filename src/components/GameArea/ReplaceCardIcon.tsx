@@ -1,7 +1,7 @@
 import useGameContext from "@/Hooks/useGameContext";
 import { cardService } from "@/Services/CardService";
 import { RefreshCcw } from "lucide-react";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 type ReplaceCardIconProps = {
   setWordHasBeenReplaced: Dispatch<SetStateAction<boolean>>;

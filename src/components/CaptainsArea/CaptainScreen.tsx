@@ -6,7 +6,6 @@ import WikiObj from "@/Models/WikiObj";
 import useConnectCaptainToSocketRoom from "@/Hooks/useConnectCaptainToSocketRoom";
 import useMediaQuery from "@custom-react-hooks/use-media-query";
 import { useTranslation } from "react-i18next";
-import Header from "../LayoutArea/Header";
 import LangToggler from "../SharedArea/LangToggler";
 
 function CaptainScreen(): JSX.Element {
