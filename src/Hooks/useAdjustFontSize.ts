@@ -7,25 +7,25 @@ function useAdjustFontSize(
 ) {
   useEffect(() => {
     if (valueLength >= 60) {
-      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.5rem]");
+      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.125rem]");
     } else if (valueLength >= 50 && valueLength < 60) {
-      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.5rem]");
+      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.2rem]");
     } else if (valueLength >= 40 && valueLength < 50) {
-      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.5rem]");
+      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.2rem]");
     } else if (valueLength >= 35 && valueLength < 40) {
-      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.5rem]");
+      setAdjustedFontSize("lg:text-xl md:text-[0.625rem] sm:text-[0.2rem]");
     } else if (valueLength >= 30 && valueLength < 35) {
-      setAdjustedFontSize("lg:text-2xl md:text-sm sm:text-[0.625rem]");
+      setAdjustedFontSize("lg:text-2xl md:text-sm sm:text-[0.325rem]");
     } else if (valueLength >= 25 && valueLength < 30) {
-      setAdjustedFontSize("lg:text-2xl md:text-sm sm:text-[0.5rem]");
+      setAdjustedFontSize("lg:text-2xl md:text-sm sm:text-[0.325rem]");
     } else if (valueLength >= 20 && valueLength < 25) {
-      setAdjustedFontSize("lg:text-3xl md:text-md sm:text-[0.875rem]");
+      setAdjustedFontSize("lg:text-3xl md:text-md sm:text-[0.5rem]");
     } else if (valueLength >= 15 && valueLength < 20) {
-      setAdjustedFontSize("lg:text-3xl md:text-md sm:text-sm");
+      setAdjustedFontSize("lg:text-3xl md:text-md sm:text-xs");
     } else if (valueLength >= 10 && valueLength < 15) {
       setAdjustedFontSize("lg:text-3xl md:text-xl sm:text-sm");
     } else {
-      setAdjustedFontSize("2xl:text-4xl lg:text-3xl md:text-2xl sm:text-lg");
+      setAdjustedFontSize("2xl:text-4xl lg:text-3xl md:text-2xl sm:text-md");
     }
   }, [wordHasBeenReplaced]);
 }
