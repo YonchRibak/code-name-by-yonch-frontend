@@ -1,0 +1,21 @@
+.bomb {
+  z-index: 3;
+
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 80px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 160px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 320px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 640px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 880px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 1280px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 1880px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 0 2560px rgba(255, 255, 255, 0.1) !important;
+}
+
+.ltr {
+  direction: ltr;
+}
+.rtl {
+  direction: rtl;
+}

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Secular+One&family=Suez+One&display=swap");
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  font-family: "Assistant", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+body {
+  height: 100vh;
+  overflow-y: hidden;
+}
