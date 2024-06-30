@@ -32,7 +32,13 @@ function CardsContainer(props: CardsContainerProps): JSX.Element {
   useRevealSelectedCards(cardStatus, setCardStatus);
 
   return (
-    <div className="grid h-max grid-cols-5 grid-rows-[repeat(5,15vh)] lg:gap-5 sm:gap-2">
+    <div
+      className={`grid h-max grid-cols-5 ${
+        props.isCaptain
+          ? "grid-rows-[repeat(5,12vh)] "
+          : "grid-rows-[repeat(5,15vh)] "
+      } lg:gap-5 sm:gap-2 `}
+    >
       {cardsContainerService.isCardsReadyToRender(
         props.cardsType,
         session.cards?.[0]

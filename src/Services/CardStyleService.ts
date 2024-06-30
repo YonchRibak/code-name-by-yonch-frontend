@@ -40,6 +40,8 @@ class CardStyleService {
     }
     // ======== CAPTAINS SCREEN STYLE CONFIGS: =======================================================
 
+    if (isCaptain) classList += "h-[90%] ";
+
     // if card is rendered on a captain's screen OR is revealed, assign background according to team ascription:
     if (isCaptain || cardStatus === "revealed") {
       classList += this.assignClassToTeam(team, isCaptain);
