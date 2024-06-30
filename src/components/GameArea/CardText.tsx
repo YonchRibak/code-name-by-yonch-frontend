@@ -3,12 +3,14 @@ import "./GameArea.css";
 import useAdjustFontSize from "@/Hooks/useAdjustFontSize";
 import useManageTextLineBreaks from "@/Hooks/useManageTextLineBreaks";
 import i18n from "@/i18n";
+import WikiObj from "@/Models/WikiObj";
 
 type CardTextProps = {
   children: ReactNode;
   wordHasBeenReplaced: boolean;
   valueLength: number;
   isCaptain: boolean;
+  wordType?: string;
 };
 
 function CardText({
@@ -16,6 +18,7 @@ function CardText({
   wordHasBeenReplaced,
   valueLength,
   isCaptain,
+  wordType,
 }: CardTextProps): JSX.Element {
   const [textValue, setTextValue] = useState("");
   const [adjustedFontSize, setAdjustedFontSize] = useState("");
@@ -36,7 +39,7 @@ function CardText({
         ${i18n.language === "en-US" ? "ltr " : "rtl "}
       `}
     >
-      {isCaptain ? textValue : children}
+      {isCaptain && wordType === "WikiObj" ? textValue : children}
     </div>
   );
 }

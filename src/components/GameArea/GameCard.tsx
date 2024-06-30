@@ -86,6 +86,7 @@ function GameCard(props: GameCardProps): JSX.Element {
           }
           isCaptain={props.isCaptain}
           wordHasBeenReplaced={wordHasBeenReplaced}
+          wordType={props.wordType}
         >
           {/* selects which value to give CardText as child: */}
           {cardService.selectWordValue(props.wordType, props.word)}
@@ -101,7 +102,7 @@ function GameCard(props: GameCardProps): JSX.Element {
         />
       )}
       {props.team === "bomb" && props.isCaptain && (
-        <GiRollingBomb className="absolute bottom-3 left-3 scale-[250%] md:scale-[150%] md:bottom-2 md:left-2 xl:scale-[400%] xl:bottom-8 xl:left-8 sm:scale-90 sm:bottom-[2px] sm:left-[2px]" />
+        <GiRollingBomb className="absolute bottom-3 left-3 scale-[250%] md:scale-[90%] md:bottom-[1px] md:left-[1px] xl:scale-[400%] xl:bottom-8 xl:left-8 sm:scale-50 sm:bottom-[2px] sm:left-[2px]" />
       )}
     </Card>
   );

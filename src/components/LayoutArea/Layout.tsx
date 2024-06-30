@@ -26,7 +26,7 @@ function Layout(): JSX.Element {
         className={
           !isCaptainScreen
             ? "h-[clamp(75vh,100%,90vh)] grid grid-cols-[1fr,6fr] gap-8 xl:p-8 sm:p-4 mr-4"
-            : "h-full p-8 sm:p-4 grid items-center"
+            : "h-full p-16 grid "
         }
       >
         {!isCaptainScreen && (

@@ -29,9 +29,10 @@ function CaptainScreen(): JSX.Element {
   return (
     <div className="grid grid-cols-[5%,95%] gap-2">
       <div className="relative">
-        <LangToggler className="absolute top-[-4vh] left-0" />
-        <ThemeToggler className="absolute top-[10vh] left-0" />
+        <LangToggler className="absolute top-[-4vh] left-[-4vw]" />
+        <ThemeToggler className="absolute top-[10vh] left-[-4vw]" />
       </div>
+
       <CardsContainer
         randomWords={
           (session.cards[0] as WikiObj)?.pageid
