@@ -15,7 +15,7 @@ function InfoPopover(props: InfoPopoverProps): JSX.Element {
       onOpenChange={(isOpen) => setPopoverState(isOpen)}
     >
       <PopoverTrigger
-        className={`max-w-min absolute sm:top-[-2px] sm:left-[-2px] sm:scale-50 md:scale-[60%] md:top-[1px] md:left-[1px] lg:scale-[150%] lg:top-3 lg:left-4 top-2 left-2 xl:top-4 xl:left-4 xl:scale-125`}
+        className={`max-w-min absolute sm:top-[-2px] sm:left-[-2px] sm:scale-50 md:scale-[60%] md:top-[1px] md:left-[1px] lg:scale-[105%] lg:top-1 lg:left-1 top-2 left-2 xl:top-2 xl:left-2 xl:scale-125`}
         onMouseEnter={() => setPopoverState(true)}
         onMouseLeave={() => setPopoverState(false)}
       >
@@ -28,7 +28,7 @@ function InfoPopover(props: InfoPopoverProps): JSX.Element {
         }}
         className={props.textAlign + ""}
       >
-        <div className="text-xl md:text-3xl sm:text-sm">{props.text}</div>
+        <div className="lg:text-2xl ">{props.text}</div>
       </PopoverContent>
     </Popover>
   );

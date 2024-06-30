@@ -113,7 +113,7 @@ module.exports = {
     function ({ addUtilities }) {
       const newUtilities = {
         ".custom-dark-shadow": {
-          textShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+          textShadow: "0 2px 4px rgba(0, 0, 0, 0.6)",
         },
         ".custom-light-shadow": {
           textShadow: "0 2px 4px rgba(211,211,211,0.2)",

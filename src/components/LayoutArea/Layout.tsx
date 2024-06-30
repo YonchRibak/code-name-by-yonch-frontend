@@ -14,7 +14,6 @@ function Layout(): JSX.Element {
   useConnectToSocketRoom(session, setSession);
   useDeclareVictors(session, setSession);
 
-  console.log(session.victory);
   return (
     <div className="h-full relative xl:p-4">
       {!isCaptainScreen && (

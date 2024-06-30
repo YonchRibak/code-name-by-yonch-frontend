@@ -27,11 +27,11 @@ function Header(): JSX.Element {
   ];
 
   return (
-    <div className="sm:flex sm:justify-between py-3 px-4 border-b">
+    <div className="sm:flex sm:justify-between py-1 px-4 border-b">
       <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between w-full">
         <div className="grid grid-rows-1 grid-cols-4 w-[15%] items-center">
           <img src={appIconSrc} className="scale-[70%] " />
-          <h1 className="text-4xl col-span-3 select-none">
+          <h1 className="text-2xl col-span-3 select-none">
             {t("header.title")}
           </h1>
         </div>
@@ -44,13 +44,13 @@ function Header(): JSX.Element {
               variant="ghost"
               className="hover:bg-primary active:bg-primary focus:bg-primary"
             >
-              <Link to={route.href} className="!text-2xl select-none">
+              <Link to={route.href} className="!text-lg select-none">
                 {route.label}
               </Link>
             </Button>
           ))}
           <ThemeToggler className="mr-6 select-none hover:bg-secondary" />
-          <LangToggler className="text-3xl select-none active:bg-primary" />
+          <LangToggler className="text-xl select-none active:bg-primary" />
         </nav>
       </div>
     </div>

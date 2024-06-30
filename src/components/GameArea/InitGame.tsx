@@ -38,7 +38,7 @@ function InitGame(): JSX.Element {
                 textAlign="text-center"
               />
             )}
-            <CardContent className="flex justify-center select-none font-medium items-center h-full p-2 text-4xl">
+            <CardContent className="flex justify-center select-none font-medium items-center h-full p-2 text-3xl">
               {deck.text}
             </CardContent>
           </Card>
@@ -56,7 +56,7 @@ function InitGame(): JSX.Element {
             turnsPlayed: 0,
           }));
         }}
-        className="text-4xl h-40 bg-primary select-none mb-56 custom-dark-shadow"
+        className="text-3xl h-40 bg-primary select-none mb-56 custom-dark-shadow"
       >
         {t("initGame.startGameBtn")}
       </Button>

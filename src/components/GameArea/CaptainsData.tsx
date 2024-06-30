@@ -1,4 +1,5 @@
 import useGameContext from "@/Hooks/useGameContext";
+import { appConfig } from "@/Utils/appConfig";
 import i18n from "@/i18n";
 import { useTranslation } from "react-i18next";
 import QRCode from "react-qr-code";
@@ -12,14 +13,20 @@ function CaptainsData(): JSX.Element {
         i18n.language === "en-US" ? "ltr" : "rtl"
       }`}
     >
-      <div className="text-3xl whitespace-pre-line">
+      <div className="text-2xl whitespace-pre-line">
         {t("captainsData.instructions")}
       </div>
-      <div className={`text-4xl font-bold`}>
+      <span className="text-2xl">{`${appConfig.frontendBaseUrl}/captain`}</span>
+      <div className="text-2xl whitespace-pre-line">
+        {t("captainsData.instructionsContinued")}
+      </div>
+      <div className={`text-3xl font-bold`}>
         {t("captainsData.sessionCode")} {session.sessionId}
       </div>
       <div className="bg-white p-5 grid place-items-center w-fit">
-        <QRCode value={`http://localhost:5173/captain/${session.sessionId}`} />
+        <QRCode
+          value={`${appConfig.frontendBaseUrl}/captain/${session.sessionId}`}
+        />
       </div>
     </div>
   );

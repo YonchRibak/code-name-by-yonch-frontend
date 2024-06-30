@@ -14,11 +14,11 @@ function About(): JSX.Element {
         i18n.language === "en-US" ? "ltr" : "rtl"
       } mx-auto px-4 py-8 overflow-y-scroll overflow-x-clip pe-48 font-normal`}
     >
-      <h1 className="text-7xl font-bold mb-4 text-secondary">
+      <h1 className="text-6xl font-bold mb-4 text-secondary">
         {t("about.title.title")}
       </h1>
       <div className="mb-8 flex flex-col items-start gap-5">
-        <p className="text-3xl ms-8">{t("about.title.description")}</p>
+        <p className="text-2xl ms-8">{t("about.title.description")}</p>
         <a
           href="https://github.com/YonchRibak/CodeName-byYonch"
           target="_blank"
@@ -32,28 +32,28 @@ function About(): JSX.Element {
 
       <div className="grid grid-cols-3">
         <div>
-          <h3 className="text-5xl font-semibold text-primary mb-8">
+          <h3 className="text-4xl font-semibold text-primary mb-8">
             {t("about.technologies.title")}
           </h3>
-          <h4 className="text-4xl font-semibold mb-4 text-secondary ms-8">
+          <h4 className="text-3xl font-semibold mb-6 text-secondary ms-8">
             {t("about.technologies.frontend.title")}
           </h4>
           <ul className="list-none ms-16 space-y-5 ">
             {aboutService.frontendListItems.map((item, index) => (
               <li key={index} className="flex gap-5">
                 <img src={item.icon} className="h-[3vh] rounded-md" />
-                <span className="text-2xl">{item.text}</span>
+                <span className="text-xl">{item.text}</span>
               </li>
             ))}
           </ul>
-          <h4 className="text-4xl font-semibold mb-4 text-secondary ms-8 mt-8">
+          <h4 className="text-3xl font-semibold mb-6 text-secondary ms-8 mt-8">
             {t("about.technologies.backend.title")}
           </h4>
           <ul className="list-none ms-16 space-y-5 mb-8">
             {aboutService.backendListItems.map((item, index) => (
               <li key={index} className="flex gap-5">
                 <img src={item.icon} className="h-[3vh]  rounded-md" />
-                <span className="text-2xl">{item.text}</span>
+                <span className="text-xl">{item.text}</span>
               </li>
             ))}
           </ul>
@@ -73,16 +73,16 @@ function About(): JSX.Element {
               href="https://mail.google.com/mail/?view=cm&to=yonch.baalil@gmail.com"
               target="_blank"
             >
-              <img src={emailSrc} className="h-[7vh]" />
+              <img src={emailSrc} className="h-[6vh]" />
             </a>
             <a
               href="https://linkedin.com/in/jonathan-ribak-546686110"
               target="_blank"
             >
-              <img src={linkedinSrc} className="h-[7vh]" />
+              <img src={linkedinSrc} className="h-[6vh]" />
             </a>
             <a href="https://github.com/YonchRibak" target="_blank">
-              <img src={githubSrc} className="h-[7vh] rounded-full" />
+              <img src={githubSrc} className="h-[6vh] rounded-full" />
             </a>
           </div>
         </div>

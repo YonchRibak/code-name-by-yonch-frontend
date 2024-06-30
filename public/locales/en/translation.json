@@ -88,7 +88,8 @@
     "cards": "You've revealed all of your cards first\nand therefore have won the game"
   },
   "captainsData": {
-    "instructions": "To enter as a captain, scan the barcode.\n Or, alternatively, just go to\nhttp://localhost:5173/captain\non your device and enter the game code.",
+    "instructions": "To enter as a captain,\nscan the barcode.\n\n Or, alternatively, just go to",
+    "instructionsContinued": "on your device and enter the game code.",
     "sessionCode": "Game Code:  "
   },
   "board": {
