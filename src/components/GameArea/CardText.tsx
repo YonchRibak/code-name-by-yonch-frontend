@@ -3,7 +3,6 @@ import "./GameArea.css";
 import useAdjustFontSize from "@/Hooks/useAdjustFontSize";
 import useManageTextLineBreaks from "@/Hooks/useManageTextLineBreaks";
 import i18n from "@/i18n";
-import WikiObj from "@/Models/WikiObj";
 
 type CardTextProps = {
   children: ReactNode;
