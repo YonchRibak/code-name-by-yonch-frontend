@@ -21,7 +21,7 @@ class CardStyleService {
     index: number,
     showCard: boolean,
     team: string,
-    wordType?: "WikiObj" | "RandomWord"
+    wordType?: string
   ): string {
     // Initial tailwind classes to all cards:
     let classList = `${cardStatus} group relative h-full opacity-0 transform translate-x-5 translate-y-5 transition-all duration-300 ease-in-out `;
