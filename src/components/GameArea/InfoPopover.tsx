@@ -15,7 +15,7 @@ function InfoPopover(props: InfoPopoverProps): JSX.Element {
       onOpenChange={(isOpen) => setPopoverState(isOpen)}
     >
       <PopoverTrigger
-        className={`max-w-min absolute sm:top-[-2px] sm:left-[-2px] sm:scale-50 md:scale-[60%] md:top-[1px] md:left-[1px] lg:scale-[105%] lg:top-1 lg:left-1 top-2 left-2 xl:top-2 xl:left-2 xl:scale-125`}
+        className={`max-w-min absolute sm:top-[-2px] sm:left-[-2px] sm:scale-50 md:scale-[60%] md:top-[1px] md:left-[1px] lg:scale-[105%] lg:top-1 lg:left-1 top-2 left-2 xl:top-[2px] xl:left-[2px] xl:scale-[85%]`}
         onMouseEnter={() => setPopoverState(true)}
         onMouseLeave={() => setPopoverState(false)}
       >

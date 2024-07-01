@@ -20,7 +20,8 @@ class CardStyleService {
     session: Session,
     index: number,
     showCard: boolean,
-    team: string
+    team: string,
+    wordType?: "WikiObj" | "RandomWord"
   ): string {
     // Initial tailwind classes to all cards:
     let classList = `${cardStatus} group relative h-full opacity-0 transform translate-x-5 translate-y-5 transition-all duration-300 ease-in-out `;
@@ -40,7 +41,7 @@ class CardStyleService {
     }
     // ======== CAPTAINS SCREEN STYLE CONFIGS: =======================================================
 
-    if (isCaptain) classList += "h-[90%] ";
+    if (isCaptain && wordType !== "WikiObj") classList += "h-[90%] ";
 
     // if card is rendered on a captain's screen OR is revealed, assign background according to team ascription:
     if (isCaptain || cardStatus === "revealed") {

@@ -18,7 +18,7 @@ function InitGame(): JSX.Element {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex flex-col gap-8 h-full">
+      <div className="flex flex-col gap-6 h-full">
         <h1 className="text-4xl select-none">{t("initGame.title")}</h1>
         {decks.map((deck) => (
           <Card

@@ -11,7 +11,7 @@ function StartScreen(): JSX.Element {
       </h1>
       <p
         style={{ direction: i18n.language === "en-US" ? "ltr" : "rtl" }}
-        className="text-4xl text-primary opacity-0 animate-fade-in delay-1000 whitespace-pre-line"
+        className="xl:text-4xl lg:text-3xl sm:text-xl text-primary opacity-0 animate-fade-in delay-1000 whitespace-pre-line"
       >
         {t("startScreen.description")}
       </p>
