@@ -68,7 +68,8 @@ function GameCard(props: GameCardProps): JSX.Element {
         session,
         props.index,
         props.showCard,
-        props.team
+        props.team,
+        props.wordType
       )}
     >
       {/* if wordType is "WikiObj" render InfoPopover component: */}
