@@ -133,7 +133,8 @@
       }
     },
     "repo": {
-      "title": "  🔗הפרויקט ב-GitHub",
+      "backend": "🔗 צד השרת בGitHub",
+      "frontend": "🔗 צד הלקוח הGitHub",
       "github": "CodeName-ByYonch"
     },
     "contact": {

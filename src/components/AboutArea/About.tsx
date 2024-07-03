@@ -31,12 +31,21 @@ function About(): JSX.Element {
         <div className="mb-8 flex flex-col items-start gap-5">
           <p className="text-2xl ms-8">{t("about.title.description")}</p>
           <a
-            href="https://github.com/YonchRibak/CodeName-byYonch"
+            href="https://github.com/YonchRibak/code-name-by-yonch-backend"
             target="_blank"
             className="ms-8"
           >
             <h3 className="text-2xl font-semibold text-pink-400">
-              {t("about.repo.title")}
+              {t("about.repo.backend")}
+            </h3>
+          </a>
+          <a
+            href="https://github.com/YonchRibak/code-name-by-yonch-frontend"
+            target="_blank"
+            className="ms-8"
+          >
+            <h3 className="text-2xl font-semibold text-pink-400">
+              {t("about.repo.frontend")}
             </h3>
           </a>
         </div>
