@@ -6,8 +6,15 @@ import linkedinSrc from "../../assets/images/linkedin.png";
 import githubSrc from "../../assets/images/github.png";
 import { aboutService } from "@/Services/AboutService";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 function About(): JSX.Element {
   const { t } = useTranslation();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  useEffect(() => {
+    const img = new Image();
+    img.src = myPicSrc;
+    img.onload = () => setImageLoaded(true);
+  }, []);
   return (
     <AnimatePresence>
       <motion.div
@@ -62,34 +69,42 @@ function About(): JSX.Element {
               ))}
             </ul>
           </div>
-
-          <div className="col-start-2 col-span-2 max-h-fit flex flex-col items-center">
-            <img
-              src={myPicSrc}
-              className="border-primary border-8 rounded-full h-[30vh] mb-16"
-            />
-            <h5 className="text-5xl font-semibold text-primary  custom-dark-shadow mb-8">
-              {t("about.contact.name")}
-            </h5>
-
-            <div className="flex justify-center gap-16 w-full col-start-2 col-span-2">
-              <a
-                href="https://mail.google.com/mail/?view=cm&to=yonch.baalil@gmail.com"
-                target="_blank"
+          <AnimatePresence>
+            {imageLoaded && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="col-start-2 col-span-2 max-h-fit flex flex-col items-center"
               >
-                <img src={emailSrc} className="h-[6vh]" />
-              </a>
-              <a
-                href="https://linkedin.com/in/jonathan-ribak-546686110"
-                target="_blank"
-              >
-                <img src={linkedinSrc} className="h-[6vh]" />
-              </a>
-              <a href="https://github.com/YonchRibak" target="_blank">
-                <img src={githubSrc} className="h-[6vh] rounded-full" />
-              </a>
-            </div>
-          </div>
+                <img
+                  src={myPicSrc}
+                  className="border-primary border-8 rounded-full h-[30vh] mb-16"
+                />
+                <h5 className="text-5xl font-semibold text-primary  custom-dark-shadow mb-8">
+                  {t("about.contact.name")}
+                </h5>
+
+                <div className="flex justify-center gap-16 w-full col-start-2 col-span-2">
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&to=yonch.baalil@gmail.com"
+                    target="_blank"
+                  >
+                    <img src={emailSrc} className="h-[6vh]" />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/jonathan-ribak-546686110"
+                    target="_blank"
+                  >
+                    <img src={linkedinSrc} className="h-[6vh]" />
+                  </a>
+                  <a href="https://github.com/YonchRibak" target="_blank">
+                    <img src={githubSrc} className="h-[6vh] rounded-full" />
+                  </a>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.div>
     </AnimatePresence>
