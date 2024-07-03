@@ -53,6 +53,7 @@
       "home": "Home"
     }
   },
+  "notForPhone": "Sorry, the main screen is not meant to be played on a small device.",
   "startScreen": {
     "header": "Welcome to Code Name by Yonch",
     "description": "Select a deck to start the game,\n or go to 'The Rules' in the navbar to learn how to play"
