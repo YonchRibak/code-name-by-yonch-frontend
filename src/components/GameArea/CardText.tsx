@@ -3,6 +3,7 @@ import "./GameArea.css";
 import useAdjustFontSize from "@/Hooks/useAdjustFontSize";
 import useManageTextLineBreaks from "@/Hooks/useManageTextLineBreaks";
 import i18n from "@/i18n";
+import { AnimatePresence, motion } from "framer-motion";
 
 type CardTextProps = {
   children: ReactNode;
@@ -31,15 +32,20 @@ function CardText({
     wordHasBeenReplaced
   );
   return (
-    <div
-      className={`
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className={`
         h-auto w-full font-medium select-none sm:leading-tight whitespace-pre-line 
          ${adjustedFontSize}
         ${i18n.language === "en-US" ? "ltr " : "rtl "}
       `}
-    >
-      {isCaptain && wordType === "WikiObj" ? textValue : children}
-    </div>
+      >
+        {isCaptain && wordType === "WikiObj" ? textValue : children}
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
