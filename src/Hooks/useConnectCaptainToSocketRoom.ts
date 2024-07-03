@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 import { Params } from "react-router-dom";
 
 function useConnectCaptainToSocketRoom(
+  session: Session,
   params: Readonly<Params<string>>,
   setSession: Dispatch<SetStateAction<Session>>
 ) {
@@ -20,7 +21,7 @@ function useConnectCaptainToSocketRoom(
     return () => {
       socketService.disconnect();
     };
-  }, []);
+  }, [session.cards]);
 }
 
 export default useConnectCaptainToSocketRoom;
