@@ -19,7 +19,7 @@ function useAdjustFontSize(
         "xl:text-xl lg:text-md md:text-[1rem] sm:text-[0.5rem]"
       );
     } else if (valueLength >= 35 && valueLength < 40) {
-      setAdjustedFontSize("xl:text-xl lg:text-lg md:text-sm sm:text-[0.5rem]");
+      setAdjustedFontSize("xl:text-xl lg:text-lg md:text-xs sm:text-[0.5rem]");
     } else if (valueLength >= 30 && valueLength < 35) {
       setAdjustedFontSize(
         "xl:text-2xl lg:text-xl md:text-xs sm:text-[0.625rem]"
