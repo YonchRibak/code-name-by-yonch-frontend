@@ -6,14 +6,17 @@ import useGameContext from "@/Hooks/useGameContext";
 import useDeclareVictors from "@/Hooks/useDeclareVictors";
 import VictoryMsgAndConfetti from "./VictoryMsgAndConfetti";
 import useConnectToSocketRoom from "@/Hooks/useConnectToSocketRoom";
+import { useMediaQuery } from "react-responsive";
+import NotForPhones from "../GameArea/NotForPhones";
 
 function Layout(): JSX.Element {
   const { session, setSession } = useGameContext();
   const isCaptainScreen = window.location.pathname.includes("/captain");
-
+  const isMobile = useMediaQuery({ query: "(max-width: 933px)" });
   useConnectToSocketRoom(session, setSession);
   useDeclareVictors(session, setSession);
 
+  if (isMobile && !isCaptainScreen) return <NotForPhones />;
   return (
     <div className="h-full relative xl:p-4">
       {!isCaptainScreen && (
