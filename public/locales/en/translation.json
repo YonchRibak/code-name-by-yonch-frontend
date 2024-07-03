@@ -134,7 +134,8 @@
       }
     },
     "repo": {
-      "title": "🔗 Project's Repository in GitHub",
+      "backend": "🔗 Backend's Repository in GitHub",
+      "frontend": "🔗 Frontend's Repository in GitHub",
       "github": "CodeName-ByYonch"
     },
     "contact": {
