@@ -3,9 +3,25 @@ import LangToggler from "../SharedArea/LangToggler";
 import PulsatingLogo from "../SharedArea/PulsatingLogo";
 import i18n from "@/i18n";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Loading from "../SharedArea/Interact/Loading";
 
 function DisconnectedCaptain(): JSX.Element {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+
   const { t } = useTranslation();
+  if (loading)
+    return (
+      <div className="flex justify-center items-center px-16 pb-16">
+        <Loading />
+      </div>
+    );
   return (
     <AnimatePresence>
       <motion.div
