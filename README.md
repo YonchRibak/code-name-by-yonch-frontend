@@ -1,8 +1,8 @@
-# CodeName-ByYonch
+# Codenames-By-Yonch
 
 ### a Full Stack Web Game For The Family or Friends
 
-### Now Live at [code-name-by-yonch.netlify.app](https://code-name-by-yonch.netlify.app/) !
+### Now Live at [codenames-by-yonch.netlify.app](https://codenames-by-yonch.netlify.app/) !
 
 ## Table of Contents
 
