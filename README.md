@@ -1,34 +1,92 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# CodeName-ByYonch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### a Full Stack Web Game For The Family or Friends
 
-Currently, two official plugins are available:
+### Now Live at [code-name-by-yonch.netlify.app](https://code-name-by-yonch.netlify.app/) !
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+1. [Description](#description)
+2. [Technologies Used](#technologies-used)
+3. [Setup and Installation](#setup-and-installation)
+   - [Prerequisites](#prerequisites)
+   - [Installation Steps](#installation-steps)
+4. [Usage](#usage)
+5. [Contact](#contact)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Description
 
-- Configure the top-level `parserOptions` property like this:
+This is my take on the beloved parlor game "Code Name".
+It is a web-based way for a group of friends or family to play the game.
+Built in Node.js and React, this project incorporates many different technologies, techniques and libraries.
+It supports both English and Hebrew.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Technologies Used
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-=======
+**Frontend:**
 
->>>>>>> d7d4e753c448103e4e15765d36ba892462522e58
+- typeScript
+- React
+- Socket.io
+- REST API (fetching from Wikipedia's API)
+- i18n
+- Tailwind CSS
+- Shadcn-ui
+
+**Backend:**
+
+- Node.js
+- Express
+- Socket.io
+- MySQL
+
+## Setup and Installation
+
+### Prerequisites
+
+- Node.js
+- MySQL
+- Git
+
+### Installation Steps
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/YonchRibak/CodeName-byYonch.git
+   cd CodeName-byYonch
+   ```
+
+2. **Install frontend dependencies:**
+
+   ```sh
+   cd Frontend
+   npm install
+   ```
+
+3. **Install backend dependencies:**
+
+   ```sh
+   cd Backend
+   npm install
+   ```
+
+4. **Set up environment variables:**
+
+   - Create a `.env` file in the `backend` directory and add the required environment variables.
+
+5. **Start the development servers:**
+   - Frontend: `cd Frontend && npm run dev`
+   - Backend: `cd Backend && npm start`
+
+## Usage
+
+After setting up, open [http://localhost:5173](http://localhost:5173) in your browser to view the frontend.
+
+## Contact
+
+Jonathan Ribak - [yonch.baalil@gmail.com](mailto:yonch.baalil@gmail.com)
+
+LinkedIn - www.linkedin.com/in/jonathan-ribak-546686110
+
+Project Link: [https://github.com/YonchRibak/CodeName-byYonch](https://github.com/YonchRibak/CodeName-byYonch)
