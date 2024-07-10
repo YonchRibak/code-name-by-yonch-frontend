@@ -33,26 +33,32 @@ function CaptainLogin(): JSX.Element {
       >
         <InputOTPGroup>
           <InputOTPSlot
+            inputMode="text"
             className="border-black dark:border-white font-bold text-2xl"
             index={0}
           />
           <InputOTPSlot
+            inputMode="text"
             className="border-black dark:border-white font-bold text-2xl"
             index={1}
           />
           <InputOTPSlot
+            inputMode="text"
             className="border-black dark:border-white font-bold text-2xl"
             index={2}
           />
           <InputOTPSlot
+            inputMode="text"
             className="border-black dark:border-white font-bold text-2xl"
             index={3}
           />
           <InputOTPSlot
+            inputMode="text"
             className="border-black dark:border-white font-bold text-2xl"
             index={4}
           />
           <InputOTPSlot
+            inputMode="text"
             className="border-black dark:border-white font-bold text-2xl"
             index={5}
           />
