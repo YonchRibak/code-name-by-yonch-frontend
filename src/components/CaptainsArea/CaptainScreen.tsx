@@ -10,6 +10,7 @@ import LangToggler from "../SharedArea/LangToggler";
 import ThemeToggler from "../SharedArea/ThemeToggler";
 import DisconnectedCaptain from "./DisconnectedCaptain";
 import { useState } from "react";
+import PulsatingLogo from "../SharedArea/PulsatingLogo";
 
 function CaptainScreen(): JSX.Element {
   const [captainConnected, setCaptainConnected] = useState(true);
@@ -30,13 +31,14 @@ function CaptainScreen(): JSX.Element {
     return (
       <div className="flex flex-col overflow-hidden justify-center items-center gap-3 w-full h-full">
         <LangToggler className="w-1/4" />
+        <PulsatingLogo />
         <div className="text-xl font-semibold whitespace-pre-line">
           {t("captain.landscape")}
         </div>
       </div>
     );
   return (
-    <div className="grid grid-cols-[5%,95%] gap-2">
+    <div className="grid grid-cols-[5%,95%] gap-2 px-16">
       <div className="relative">
         <LangToggler className="absolute top-[-4vh] left-[-4vw]" />
         <ThemeToggler className="absolute top-[10vh] left-[-4vw]" />

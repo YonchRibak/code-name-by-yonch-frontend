@@ -2,7 +2,6 @@ import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import appIconSrc from "../../../public/codeNameIcon.png";
 import { useTranslation } from "react-i18next";
-import "./LayoutArea.css";
 import ThemeToggler from "../SharedArea/ThemeToggler";
 import LangToggler from "../SharedArea/LangToggler";
 import useGameContext from "@/Hooks/useGameContext";

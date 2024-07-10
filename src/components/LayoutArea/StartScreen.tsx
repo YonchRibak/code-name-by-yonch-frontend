@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
-import logoSrc from "../../../public/codeNameIcon.png";
 import i18n from "@/i18n";
 import { motion, AnimatePresence } from "framer-motion";
+import PulsatingLogo from "../SharedArea/PulsatingLogo";
 
 function StartScreen(): JSX.Element {
   const { t } = useTranslation();
+
   return (
     <AnimatePresence>
       <motion.div
@@ -13,7 +14,7 @@ function StartScreen(): JSX.Element {
         exit={{ opacity: 0 }}
         className="flex flex-col justify-center items-center "
       >
-        <img src={logoSrc} className="w-[15vw] animate-pulse" />
+        <PulsatingLogo />
         <h1 className="text-6xl font-semibold text-secondary my-12 opacity-0 animate-fade-in delay-250 ">
           {t("startScreen.header")}
         </h1>

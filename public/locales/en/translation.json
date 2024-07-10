@@ -53,7 +53,8 @@
       "home": "Home"
     }
   },
-  "notForPhone": "Sorry, the main screen is not meant to be played on a small device.",
+  "notForPhone": "Sorry, the main screen is not meant to be played on a small device.\nIf you are a captain go to captains login.",
+  "goToCaptainsLogin": "Captains Login",
   "startScreen": {
     "header": "Welcome to Codenames by Yonch",
     "description": "Select a deck to start the game,\n or go to 'The Rules' in the navbar to learn how to play"

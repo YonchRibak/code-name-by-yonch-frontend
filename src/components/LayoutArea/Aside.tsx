@@ -1,6 +1,5 @@
 import useGameContext from "@/Hooks/useGameContext";
 import InitGame from "../GameArea/InitGame";
-import "./LayoutArea.css";
 import ManageGame from "../GameArea/ManageGame";
 
 function Aside(): JSX.Element {
