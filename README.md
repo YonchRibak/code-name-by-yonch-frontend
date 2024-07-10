@@ -1,4 +1,4 @@
-# CodeName-ByYonch
+# Codenames-By-Yonch
 
 ### a Full Stack Web Game For The Family or Friends
 
