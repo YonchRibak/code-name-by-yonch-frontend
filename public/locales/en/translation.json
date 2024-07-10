@@ -109,7 +109,7 @@
       "enterGame": "Enter"
     },
     "landscape": "Please shift your device to\nlandscape orientation.",
-    "disconnected": "Sorry, the game you were connected to was aborted."
+    "disconnected": "Sorry, either the game you were connected to has been aborted,\nor the code you entered is incorrect."
   },
   "about": {
     "title": {

@@ -11,6 +11,7 @@ import ThemeToggler from "../SharedArea/ThemeToggler";
 import DisconnectedCaptain from "./DisconnectedCaptain";
 import { useState } from "react";
 import PulsatingLogo from "../SharedArea/PulsatingLogo";
+import { AnimatePresence, motion } from "framer-motion";
 
 function CaptainScreen(): JSX.Element {
   const [captainConnected, setCaptainConnected] = useState(true);
@@ -29,33 +30,47 @@ function CaptainScreen(): JSX.Element {
   if (!captainConnected) return <DisconnectedCaptain />;
   if (!landscape)
     return (
-      <div className="flex flex-col overflow-hidden justify-center items-center gap-3 w-full h-full">
-        <LangToggler className="w-1/4" />
-        <PulsatingLogo />
-        <div className="text-xl font-semibold whitespace-pre-line">
-          {t("captain.landscape")}
-        </div>
-      </div>
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="flex flex-col overflow-hidden justify-center items-center gap-3 w-full h-full"
+        >
+          <LangToggler className="w-1/4" />
+          <PulsatingLogo />
+          <div className="text-xl font-semibold whitespace-pre-line">
+            {t("captain.landscape")}
+          </div>
+        </motion.div>
+      </AnimatePresence>
     );
   return (
-    <div className="grid grid-cols-[5%,95%] gap-2 px-16">
-      <div className="relative">
-        <LangToggler className="absolute top-[-4vh] left-[-4vw]" />
-        <ThemeToggler className="absolute top-[10vh] left-[-4vw]" />
-      </div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="grid grid-cols-[5%,95%] gap-2 px-16"
+      >
+        <div className="relative">
+          <LangToggler className="absolute top-[-4vh] left-[-4vw]" />
+          <ThemeToggler className="absolute top-[10vh] left-[-4vw]" />
+        </div>
 
-      <CardsContainer
-        randomWords={
-          (session.cards[0] as WikiObj)?.pageid
-            ? null
-            : (session.cards as RandomWord[])
-        }
-        isCaptain
-        cardsType={
-          (session.cards[0] as WikiObj)?.pageid ? "WikiObj" : "RandomWord"
-        }
-      />
-    </div>
+        <CardsContainer
+          randomWords={
+            (session.cards[0] as WikiObj)?.pageid
+              ? null
+              : (session.cards as RandomWord[])
+          }
+          isCaptain
+          cardsType={
+            (session.cards[0] as WikiObj)?.pageid ? "WikiObj" : "RandomWord"
+          }
+        />
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
