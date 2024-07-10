@@ -8,19 +8,24 @@ import useMediaQuery from "@custom-react-hooks/use-media-query";
 import { useTranslation } from "react-i18next";
 import LangToggler from "../SharedArea/LangToggler";
 import ThemeToggler from "../SharedArea/ThemeToggler";
-import { useEffect } from "react";
+import DisconnectedCaptain from "./DisconnectedCaptain";
+import { useState } from "react";
 
 function CaptainScreen(): JSX.Element {
+  const [captainConnected, setCaptainConnected] = useState(true);
   const { session, setSession } = useGameContext();
   const { t } = useTranslation();
   const landscape = useMediaQuery("(orientation: landscape)");
   const params = useParams();
 
-  useConnectCaptainToSocketRoom(session, params, setSession);
+  useConnectCaptainToSocketRoom(
+    session,
+    params,
+    setSession,
+    setCaptainConnected
+  );
 
-  useEffect(() => {
-    console.log("change");
-  }, [landscape]);
+  if (!captainConnected) return <DisconnectedCaptain />;
   if (!landscape)
     return (
       <div className="flex flex-col overflow-hidden justify-center items-center gap-3 w-full h-full">

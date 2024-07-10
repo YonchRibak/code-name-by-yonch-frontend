@@ -205,7 +205,7 @@ class CardService {
     setSession: Dispatch<SetStateAction<Session>>
   ) {
     if (isCaptain || cardStatus === "revealed") return; // if card is rendered on a captain's screen OR card has been revealed, have no onClick effect.
-    if (session.gameStarted) {
+    if (session.gameStarted && session.numberOfUsersInRoom >= 3) {
       this.handleCardStatus(cardStatus, index, setCardStatus);
       this.pushOrRemoveIndexFromCardsRevealedArr(cardStatus, index, setSession);
     }

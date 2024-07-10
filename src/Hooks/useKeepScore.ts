@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import useGameContext from "./useGameContext";
 
 function useKeepScore(cardStatus: string, team: string): void {
-  const { setSession } = useGameContext();
+  const { session, setSession } = useGameContext();
 
   useEffect(() => {
-    if (cardStatus === "revealed") {
+    if (cardStatus === "revealed" && session.answerSubmitted) {
       switch (team) {
         case "red":
           setSession((prevSession) => {

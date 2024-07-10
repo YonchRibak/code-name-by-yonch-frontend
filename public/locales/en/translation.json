@@ -1,7 +1,7 @@
 {
   "configurations": {
     "wikiLangName": "en",
-    "docTitle": "Code Name"
+    "docTitle": "Codenames"
   },
   "gameRules": {
     "title": "The Game's Rules and Instructions",
@@ -46,7 +46,7 @@
     }
   },
   "header": {
-    "title": "Code Name",
+    "title": "Codenames",
     "routes": {
       "gameRules": "The Rules",
       "about": "About This Project",
@@ -55,7 +55,7 @@
   },
   "notForPhone": "Sorry, the main screen is not meant to be played on a small device.",
   "startScreen": {
-    "header": "Welcome to Code Name by Yonch",
+    "header": "Welcome to Codenames by Yonch",
     "description": "Select a deck to start the game,\n or go to 'The Rules' in the navbar to learn how to play"
   },
   "loading": {
@@ -107,12 +107,13 @@
       "enterCode": "Enter Game Code",
       "enterGame": "Enter"
     },
-    "landscape": "Please shift your device to\nlandscape orientation."
+    "landscape": "Please shift your device to\nlandscape orientation.",
+    "disconnected": "Sorry, the game you were connected to was aborted."
   },
   "about": {
     "title": {
       "title": "About The Project",
-      "description": "This is my take on the beloved parlor game Code Name.\nIt is a web-based way for a group of friends or family to play the game.\nBuilt in Node.js and React, this project incorporates many different technologies, techniques and libraries.\nIt supports both English and Hebrew."
+      "description": "This is my take on the beloved parlor game Codenames.\nIt is a web-based way for a group of friends or family to play the game.\nBuilt in Node.js and React, this project incorporates many different technologies, techniques and libraries.\nIt supports both English and Hebrew."
     },
     "technologies": {
       "title": "Technologies Used",

@@ -32,12 +32,11 @@ class GameService {
   ) {
     setSession((prevSession) => ({
       ...prevSession,
-      answerSubmitted: !prevSession.answerSubmitted,
+      answerSubmitted: true,
     }));
     setCurrIndicesArr(session.indicesOfRevealedCards);
     socketService.updateSessionData(session);
   }
-
 }
 
 export const gameService = new GameService();

@@ -7,7 +7,7 @@ function useConnectToSocketRoom(
   setSession: Dispatch<SetStateAction<Session>>
 ) {
   useEffect(() => {
-    if (session.gameStarted) {
+    if (session.gameStarted && !socketService.isConnected()) {
       socketService.connect();
       socketService.initRoom(session.sessionId, setSession, session);
     }

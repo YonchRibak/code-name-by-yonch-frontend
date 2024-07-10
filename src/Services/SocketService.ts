@@ -7,8 +7,18 @@ class SocketService {
   private socket: Socket;
 
   public connect(): void {
-    // Client connects to server:
-    this.socket = io(appConfig.baseUrl);
+    // Client connects to server with reconnection options:
+    this.socket = io(appConfig.baseUrl, {
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 1000,
+    });
+
+    this.socket.on("connect", () => {});
+
+    this.socket.on("reconnect", () => {});
+
+    this.socket.on("disconnect", () => {});
   }
 
   public isConnected(): boolean {
@@ -46,6 +56,13 @@ class SocketService {
     // Client listens to sessionData shared by server:
     this.socket.on("serverSharedSessionData", (sessionData: Session) => {
       setSession(sessionData);
+    });
+  }
+
+  public gameAborted(callback: () => void) {
+    // Listen to the gameAborted event
+    this.socket.on("gameAborted", () => {
+      callback();
     });
   }
 
