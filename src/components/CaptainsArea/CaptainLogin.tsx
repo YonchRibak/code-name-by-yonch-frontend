@@ -25,13 +25,14 @@ function CaptainLogin(): JSX.Element {
       </h1>
 
       <InputOTP
+        inputMode="text"
         containerClassName="text-primary"
         maxLength={6}
         value={gameCode}
         onChange={(value) => setGameCode(value)}
         pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
       >
-        <InputOTPGroup>
+        <InputOTPGroup inputMode="text">
           <InputOTPSlot
             inputMode="text"
             className="border-black dark:border-white font-bold text-2xl"
