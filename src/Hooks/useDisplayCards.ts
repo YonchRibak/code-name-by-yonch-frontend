@@ -3,14 +3,17 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 
 function useDisplayCards(
   setShowCards: Dispatch<SetStateAction<boolean[]>>,
-  cardsType: string
+  cardsType: string,
+  isCaptain: boolean
 ) {
   useEffect(() => {
     if (
       cardsType === "RandomWord" ||
       (cardsType === "WikiObj" &&
         ((localStorage.getItem("en-initWikis") && i18n.language === "en-US") ||
-          (localStorage.getItem("he-initWikis") && i18n.language === "he-IL")))
+          (localStorage.getItem("he-initWikis") &&
+            i18n.language === "he-IL"))) ||
+      (cardsType === "WikiObj" && isCaptain)
     ) {
       const showDelay = 100;
 

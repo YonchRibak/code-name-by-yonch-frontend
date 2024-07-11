@@ -27,10 +27,10 @@ function CardsContainer(props: CardsContainerProps): JSX.Element {
     props.randomWords,
     props.isFamily
   );
-  useDisplayCards(setShowCards, props.cardsType);
+  useDisplayCards(setShowCards, props.cardsType, props.isCaptain);
 
   useRevealSelectedCards(cardStatus, setCardStatus);
-console.log(session.cards)
+  console.log(session.cards);
   return (
     <div
       className={`grid h-max grid-cols-5 ${
