@@ -30,7 +30,7 @@ function CardsContainer(props: CardsContainerProps): JSX.Element {
   useDisplayCards(setShowCards, props.cardsType, props.isCaptain);
 
   useRevealSelectedCards(cardStatus, setCardStatus);
-  console.log(session.cards);
+
   return (
     <div
       className={`grid h-max grid-cols-5 ${
