@@ -8,6 +8,7 @@ import WikiObj from "@/Models/WikiObj";
 import useStoreCardsToSession from "@/Hooks/useStoreCardsToSession";
 import { cardsContainerService } from "@/Services/CardsContainerService";
 import useIsFullScreen from "@/Hooks/useIsFullScreen";
+import ReplaceAllCardsIcon from "./ReplaceAllCardsIcon";
 
 type CardsContainerProps = {
   randomWords?: RandomWord[];
@@ -34,14 +35,20 @@ function CardsContainer(props: CardsContainerProps): JSX.Element {
   const isFullScreen = useIsFullScreen();
   return (
     <div
-      className={`grid h-max grid-cols-5 ${
+      className={`relative grid h-max grid-cols-5 ${
         props.isCaptain
           ? isFullScreen
             ? "grid-rows-[repeat(5,12vh)] pt-8 "
             : "grid-rows-[repeat(5,12vh)] "
-          : "grid-rows-[repeat(5,15vh)] "
+          : "grid-rows-[repeat(5,15vh)] pt-8 "
       } lg:gap-5 sm:gap-2 `}
     >
+      {session.cards.length && !session.gameStarted && (
+        <ReplaceAllCardsIcon
+          wordType={props.cardsType}
+          isFamily={props.isFamily}
+        />
+      )}
       {cardsContainerService.isCardsReadyToRender(
         props.cardsType,
         session.cards?.[0]

@@ -100,7 +100,8 @@
     }
   },
   "gameCard": {
-    "replaceBtn": "Replace"
+    "replaceBtn": "Replace",
+    "replaceAll": "Replace all"
   },
 
   "captain": {

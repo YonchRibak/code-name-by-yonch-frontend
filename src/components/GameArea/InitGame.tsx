@@ -17,6 +17,7 @@ function InitGame(): JSX.Element {
     { id: 3, text: t("initGame.goNuts"), href: "/go-nuts" },
   ];
 
+  console.log(typeof session.cards[0]);
   return (
     <AnimatePresence>
       <motion.div
@@ -25,7 +26,7 @@ function InitGame(): JSX.Element {
         exit={{ opacity: 0 }}
         className="flex flex-col h-full"
       >
-        <div className="flex flex-col gap-6 h-full">
+        <div className=" relative flex flex-col gap-6 h-full">
           <h1 className="text-4xl select-none">{t("initGame.title")}</h1>
           {decks.map((deck) => (
             <Card

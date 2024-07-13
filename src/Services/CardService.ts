@@ -71,7 +71,11 @@ class CardService {
     return currIndexForReplacement ? currIndexForReplacement : 0;
   }
 
-  private increaseIndexForReplacement(wordType: string, isFamily?: boolean) {
+  private increaseIndexForReplacement(
+    wordType: string,
+    isFamily?: boolean,
+    value: number = 1
+  ) {
     const deck = isFamily ? "family" : "adults";
 
     // Increase the index for the next replacement based on card type
@@ -82,7 +86,7 @@ class CardService {
       );
       sessionStorage.setItem(
         `indexForReplacement-${deck}`,
-        prevIndex ? JSON.stringify(prevIndex + 1) : "1" // if PrevIndex is null, this means 0 was used and there for the next index is 1.
+        prevIndex ? JSON.stringify(prevIndex + value) : "1" // if PrevIndex is null, this means 0 was used and there for the next index is 1.
       );
     } else {
       // Increase the index for Wiki cards type:
@@ -91,7 +95,7 @@ class CardService {
       );
       localStorage.setItem(
         "indexForReplacement-wiki",
-        prevIndex ? JSON.stringify(prevIndex + 1) : "1" // if PrevIndex is null, this means 0 was used and there for the next index is 1.
+        prevIndex ? JSON.stringify(prevIndex + value) : "1" // if PrevIndex is null, this means 0 was used and there for the next index is 1.
       );
     }
   }
@@ -116,6 +120,21 @@ class CardService {
     });
   }
 
+  private handleAllWikisReplacement(
+    wordType: string,
+    setSession: Dispatch<SetStateAction<Session>>
+  ) {
+    setSession((prevSession) => ({
+      ...prevSession,
+      cards: [
+        ...prevSession.spareCards.slice(
+          this.findIndexForReplacement(wordType),
+          this.findIndexForReplacement(wordType) + 25
+        ),
+      ],
+    }));
+  }
+
   private handleRandomWordReplacement(
     isFamily: boolean,
     index: number,
@@ -137,18 +156,51 @@ class CardService {
     });
   }
 
+  private handleAllRandomWordsReplacement(
+    isFamily: boolean,
+    wordType: string,
+    setSession: Dispatch<SetStateAction<Session>>
+  ) {
+    setSession((prevSession) => {
+      return {
+        ...prevSession,
+        cards: [
+          ...prevSession.spareCards.slice(
+            this.findIndexForReplacement(wordType, isFamily),
+            this.findIndexForReplacement(wordType, isFamily) + 25
+          ),
+        ],
+      };
+    });
+  }
+
   private handleWikiUpdatedStorage(
     index: number,
     wordType: string,
     session: Session
   ) {
     // Store the updated cards in localStorage after replacement
+    const itemPrefix = i18n.language === "en-US" ? "en" : "he";
     localStorage.setItem(
-      `${i18n.language}-initWikis`,
+      `${itemPrefix}-initWikis`,
       JSON.stringify([
         ...session.cards.slice(0, index), // Keep cards before the replaced card
         session.spareCards[this.findIndexForReplacement(wordType)], // Replace selected card
         ...session.cards.slice(index + 1), // Keep cards after the replaced card
+      ])
+    );
+  }
+
+  private handleAllWikisUpdatedStorage(wordType: string, session: Session) {
+    // Store the updated cards in localStorage after replacement
+    const itemPrefix = i18n.language === "en-US" ? "en" : "he";
+    localStorage.setItem(
+      `${itemPrefix}-initWikis`,
+      JSON.stringify([
+        ...session.spareCards.slice(
+          this.findIndexForReplacement(wordType),
+          this.findIndexForReplacement(wordType) + 25
+        ),
       ])
     );
   }
@@ -178,6 +230,29 @@ class CardService {
     );
   }
 
+  private handleAllRandomWordsUpdatedStorage(
+    isFamily: boolean,
+    wordType: string,
+    session: Session
+  ) {
+    const selectedDeckCards = isFamily ? "family-cards" : "adults-cards"; // sessionStorage item's name
+    const selectedDeckSpareCards = isFamily ? "family-spares" : "adults-spares"; // sessionStorage item's name
+
+    sessionStorage.setItem(
+      selectedDeckCards,
+      JSON.stringify([
+        ...session.spareCards.slice(
+          this.findIndexForReplacement(wordType, isFamily),
+          this.findIndexForReplacement(wordType, isFamily) + 25
+        ),
+      ])
+    );
+    sessionStorage.setItem(
+      selectedDeckSpareCards,
+      JSON.stringify(session.spareCards)
+    );
+  }
+
   public handleCardReplacement(
     wordType: string,
     index: number,
@@ -196,6 +271,21 @@ class CardService {
     this.increaseIndexForReplacement(wordType, isFamily);
   }
 
+  public handleAllCardsReplacement(
+    wordType: string,
+    setSession: Dispatch<SetStateAction<Session>>,
+    session: Session,
+    isFamily?: boolean
+  ) {
+    if (wordType === "RandomWord") {
+      this.handleAllRandomWordsReplacement(isFamily, wordType, setSession);
+      this.handleAllRandomWordsUpdatedStorage(isFamily, wordType, session);
+    } else {
+      this.handleAllWikisReplacement(wordType, setSession);
+      this.handleAllWikisUpdatedStorage(wordType, session);
+    }
+    this.increaseIndexForReplacement(wordType, isFamily, 25);
+  }
   public handleCardSelection(
     session: Session,
     cardStatus: string,

@@ -100,7 +100,8 @@
     }
   },
   "gameCard": {
-    "replaceBtn": "החלף"
+    "replaceBtn": "החלף",
+    "replaceAll": "החלף הכל"
   },
   "captain": {
     "loginScreen": {
