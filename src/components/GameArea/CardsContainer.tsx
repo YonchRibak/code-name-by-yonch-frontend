@@ -7,6 +7,7 @@ import useRevealSelectedCards from "@/Hooks/useRevealSelectedCards";
 import WikiObj from "@/Models/WikiObj";
 import useStoreCardsToSession from "@/Hooks/useStoreCardsToSession";
 import { cardsContainerService } from "@/Services/CardsContainerService";
+import useIsFullScreen from "@/Hooks/useIsFullScreen";
 
 type CardsContainerProps = {
   randomWords?: RandomWord[];
@@ -30,12 +31,14 @@ function CardsContainer(props: CardsContainerProps): JSX.Element {
   useDisplayCards(setShowCards, props.cardsType, props.isCaptain);
 
   useRevealSelectedCards(cardStatus, setCardStatus);
-
+  const isFullScreen = useIsFullScreen();
   return (
     <div
       className={`grid h-max grid-cols-5 ${
         props.isCaptain
-          ? "grid-rows-[repeat(5,12vh)] "
+          ? isFullScreen
+            ? "grid-rows-[repeat(5,12vh)] pt-8 "
+            : "grid-rows-[repeat(5,12vh)] "
           : "grid-rows-[repeat(5,15vh)] "
       } lg:gap-5 sm:gap-2 `}
     >

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import ThemeToggler from "../SharedArea/ThemeToggler";
 import LangToggler from "../SharedArea/LangToggler";
 import useGameContext from "@/Hooks/useGameContext";
+import ScreenToggler from "../SharedArea/ScreenToggler";
 
 function Header(): JSX.Element {
   const { session } = useGameContext();
@@ -48,7 +49,8 @@ function Header(): JSX.Element {
               </Link>
             </Button>
           ))}
-          <ThemeToggler className="mr-6 select-none hover:bg-secondary" />
+          <ScreenToggler className="mr-6 select-none " />
+          <ThemeToggler className="mr-6 select-none " />
           <LangToggler className="text-xl select-none active:bg-primary" />
         </nav>
       </div>

@@ -12,6 +12,7 @@ import DisconnectedCaptain from "./DisconnectedCaptain";
 import { useState } from "react";
 import PulsatingLogo from "../SharedArea/PulsatingLogo";
 import { AnimatePresence, motion } from "framer-motion";
+import ScreenToggler from "../SharedArea/ScreenToggler";
 
 function CaptainScreen(): JSX.Element {
   const [captainConnected, setCaptainConnected] = useState(true);
@@ -26,6 +27,8 @@ function CaptainScreen(): JSX.Element {
     setSession,
     setCaptainConnected
   );
+
+
 
   if (!captainConnected) return <DisconnectedCaptain />;
   if (!landscape)
@@ -54,8 +57,9 @@ function CaptainScreen(): JSX.Element {
         className="grid grid-cols-[5%,95%] gap-2 px-16"
       >
         <div className="relative">
-          <LangToggler className="absolute top-[-4vh] left-[-4vw]" />
-          <ThemeToggler className="absolute top-[10vh] left-[-4vw]" />
+          <ScreenToggler className="absolute top-[-4vh] left-[-4vw]" />
+          <LangToggler className="absolute top-[10vh] left-[-4vw]" />
+          <ThemeToggler className="absolute top-[24vh] left-[-4vw]" />
         </div>
 
         <CardsContainer
