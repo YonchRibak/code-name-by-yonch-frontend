@@ -41,7 +41,7 @@ function CardsContainer(props: CardsContainerProps): JSX.Element {
             ? "grid-rows-[repeat(5,12vh)] pt-8 "
             : "grid-rows-[repeat(5,12vh)] "
           : "grid-rows-[repeat(5,15vh)] pt-8 "
-      } 2xl:gap-y-1 2xl:gap-x-5 3xl:gap-5 `}
+      } xl:gap-2 2xl:gap-y-1 2xl:gap-x-5 3xl:gap-5 `}
     >
       {session.cards.length && !session.gameStarted && (
         <ReplaceAllCardsIcon
