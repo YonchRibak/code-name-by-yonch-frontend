@@ -12,10 +12,10 @@ function StartScreen(): JSX.Element {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="flex flex-col justify-center items-center "
+        className="flex flex-col justify-start items-center mt-16"
       >
         <PulsatingLogo />
-        <h1 className="text-6xl font-semibold text-secondary my-12 opacity-0 animate-fade-in delay-250 ">
+        <h1 className="3xl:text-6xl xl:text-5xl font-semibold text-secondary my-12 opacity-0 animate-fade-in delay-250 ">
           {t("startScreen.header")}
         </h1>
         <p
