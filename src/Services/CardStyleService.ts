@@ -24,7 +24,7 @@ class CardStyleService {
     wordType?: string
   ): string {
     // Initial tailwind classes to all cards:
-    let classList = `${cardStatus} group relative h-full opacity-0 transform translate-x-5 translate-y-5 transition-all duration-300 ease-in-out `;
+    let classList = `${cardStatus} group relative 2xl:h-4/5 3xl:h-full opacity-0 transform translate-x-5 translate-y-5 transition-all duration-300 ease-in-out `;
 
     // if showCard is true, show card (handles cards' gradual reveal):
     if (showCard) {

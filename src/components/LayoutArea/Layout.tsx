@@ -14,7 +14,7 @@ function Layout(): JSX.Element {
   const isMobile = useMediaQuery({ query: "(max-width: 933px)" });
   useConnectToSocketRoom(session, setSession);
   useDeclareVictors(session, setSession);
-  
+
   if (isMobile && !isCaptainScreen) return <NotForPhones />;
   return (
     <div className="h-full relative xl:p-4">
@@ -27,7 +27,7 @@ function Layout(): JSX.Element {
       <main
         className={
           !isCaptainScreen
-            ? "h-[clamp(75vh,100%,90vh)] grid grid-cols-[1fr,6fr] gap-8 xl:p-8 sm:p-4 mr-4 scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full  scrollbar-thumb-primary scrollbar-track-transparent overflow-y-scroll 3xl:overflow-y-hidden"
+            ? "h-[clamp(75vh,90vh,90vh)] grid grid-cols-[1fr,6fr] gap-8 xl:p-8 sm:p-4 mr-4 scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full  scrollbar-thumb-primary scrollbar-track-transparent overflow-y-scroll 3xl:overflow-y-hidden"
             : "h-full  pt-8 grid overflow-y-scroll align-top"
         }
       >

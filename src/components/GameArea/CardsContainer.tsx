@@ -35,13 +35,13 @@ function CardsContainer(props: CardsContainerProps): JSX.Element {
   const isFullScreen = useIsFullScreen();
   return (
     <div
-      className={`relative grid h-max grid-cols-5 ${
+      className={`relative grid grid-cols-5 ${
         props.isCaptain
           ? isFullScreen
             ? "grid-rows-[repeat(5,12vh)] pt-8 "
             : "grid-rows-[repeat(5,12vh)] "
           : "grid-rows-[repeat(5,15vh)] pt-8 "
-      } lg:gap-5 sm:gap-2 `}
+      } 2xl:gap-y-1 2xl:gap-x-5 3xl:gap-5 `}
     >
       {session.cards.length && !session.gameStarted && (
         <ReplaceAllCardsIcon
